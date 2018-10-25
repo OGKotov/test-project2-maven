@@ -16,16 +16,16 @@ import java.io.IOException;
 
 public class ReaderJSON {
 
-    JSONObject jsonObject;
+    private JSONObject jsonObject;
 
     //Method read JSONobject from JSON file
-    void readerFromJSONFiles() {
+    void readerFromJSONFiles(String pathTaskFile) {
         JSONParser parser = new JSONParser();
 
         try {
 
             jsonObject = (JSONObject) parser.parse(
-                    new FileReader("src\main\resources\json-files\lines.json"));
+                    new FileReader(pathTaskFile));
 
         }catch (
                 FileNotFoundException e) {
